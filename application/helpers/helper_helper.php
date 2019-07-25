@@ -129,4 +129,19 @@ if ( ! function_exists('_hIsNaturalNumber')) {
 		return ($n != 0 && ctype_digit((string) $n));
 	}
 }
+if ( ! function_exists('hActiveMenu')) {
+	function hActiveMenu( $input ) {
+		$CI =& get_instance();
+		$URI = $CI->uri->uri_string();
+
+
+		if (preg_match("/^$input$/", $URI))
+		{
+
+			return 'active';
+		}
+		return '';
+
+	}
+}
 

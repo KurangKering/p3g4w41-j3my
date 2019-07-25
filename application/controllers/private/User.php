@@ -19,13 +19,13 @@ class User extends Private_Controller {
 	{	
 
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'valid_email|trim|required');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
-		$this->form_validation->set_rules('role_id', 'Hak Akses','required');
+		$this->form_validation->set_rules('role_id', 'Hak Akses','required|min_length[1]');
 		if ($this->form_validation->run() === FALSE) {
 			$this->vars['status'] = 'error';
-			$this->vars['messages'] = validation_errors();
+			$this->vars['messages'] = $this->form_validation->error_array();
 			
 		} else {
 			$form_data = $this->input->post();
@@ -53,12 +53,12 @@ class User extends Private_Controller {
 	public function update()
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('role_id', 'Hak Akses','required');
 		if ($this->form_validation->run() === FALSE) {
 			$this->vars['status'] = 'error';
-			$this->vars['messages'] = validation_errors();
+			$this->vars['messages'] = $this->form_validation->error_array();
 			
 		} else {
 			$form_data = $this->input->post();

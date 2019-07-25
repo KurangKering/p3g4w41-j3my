@@ -24,7 +24,7 @@
 					</h2>
 					<ul class="header-dropdown m-r--5">
 						<li class="dropdown">
-							<button class="btn btn-info btn-md" type="button">Tambah Pengguna</button>
+							<button class="btn btn-info btn-md" onclick="show_modal()" type="button">Tambah Pengguna</button>
 							
 						</li>
 					</ul>
@@ -90,8 +90,8 @@
 <script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/vfs_fonts.js') }}"></script>
 <script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/buttons.html5.min.js') }}"></script>
 <script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/buttons.print.min.js') }}"></script>
-
 @endsection
+
 
 @section('js-inline')
 <script>

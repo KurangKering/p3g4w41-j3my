@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Dashboard extends Private_Controller {
 
 	public function index()
-	{
+	{	
+		
 		return view('private.dashboard');
 	}
 

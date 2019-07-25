@@ -1,49 +1,140 @@
   <div id="modal-user" style="display: none;">
-    <form  id="frm-user">
+
+    <div class="card">
+      <div class="header">
+        {{-- <form  id="frm-user">
+          <input type="hidden" name="id" value="">
+          <input type="hidden" name="type" value="get">
+          <div class="card">
+            <div class="card-body">
+             <div id="error-message">
+
+             </div>
+             <div class="form-group">
+              <label>Nama</label>
+              <input type="text" name="nama"  id="nama" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email"  id="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" name="username"  id="username" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" name="password"  id="password" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Hak Akses</label>
+              <select class="form-control" name="role_id" id="role_id">
+                @foreach ($roles as $k => $role)
+                <option value="{{ $k }}">{{ $role }}</option>
+                @endforeach
+
+
+              </select>
+            </div>
+
+
+
+
+          </div>
+          <div class="card-footer text-right">
+            <button class="btn btn-primary mr-1" type="submit">Submit</button>
+            <button class="btn btn-secondary" type="reset">Reset</button>
+          </div>
+        </div>
+      </form> --}}
+    </div>
+    <div class="body">
+     <div id="error-message">
+
+     </div>
+     <form class="form-horizontal" id="frm-user">
       <input type="hidden" name="id" value="">
+
       <input type="hidden" name="type" value="get">
-      <div class="card">
-        <div class="card-body">
-         <div id="error-message">
 
-         </div>
-         <div class="form-group">
-          <label>Nama</label>
-          <input type="text" name="nama"  id="nama" class="form-control">
+      <div class="row clearfix">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 form-control-label">
+          <label for="nama">Nama</label>
         </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" name="email"  id="email" class="form-control">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-7">
+          <div class="form-group">
+            <div class="form-line">
+              <input type="text" id="nama" class="form-control" name="nama" >
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Username</label>
-          <input type="text" name="username"  id="username" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" name="password"  id="password" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Hak Akses</label>
-          <select class="form-control" name="role_id" id="role_id">
-            @foreach ($roles as $k => $role)
-            <option value="{{ $k }}">{{ $role }}</option>
-            @endforeach
-
-
-          </select>
-        </div>
-
-
-
-
       </div>
-      <div class="card-footer text-right">
-        <button class="btn btn-primary mr-1" type="submit">Submit</button>
-        <button class="btn btn-secondary" type="reset">Reset</button>
+      <div class="row clearfix">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 form-control-label">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-7">
+          <div class="form-group">
+            <div class="form-line">
+              <input type="text" id="email" name="email" class="form-control" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 form-control-label">
+          <label for="username">Username</label>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-7">
+          <div class="form-group">
+            <div class="form-line">
+              <input type="text" id="username" name="username" class="form-control" >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row clearfix">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 form-control-label">
+          <label for="password">Password</label>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-7">
+          <div class="form-group">
+            <div class="form-line">
+              <input type="text" id="password" name="password" class="form-control" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 form-control-label">
+          <label for="password">Hak Akses</label>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-7">
+          <div class="form-group">
+            <div class="form-line">
+             <select  class="form-control" name="role_id" id="role_id">
+              <option value="">-- Please select Role --</option>
+              @foreach ($ALL_ROLE as $key => $role)
+              <option value="{{ $role->id }}">{{ $role->role_name }}</option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row clearfix">
+      <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+        <button type="submit" id="btn-submit" class="btn btn-primary m-t-15 waves-effect">TAMBAH</button>
       </div>
     </div>
   </form>
+</div>
+</div>
+
+
 
 </div>
 
@@ -94,7 +185,7 @@
 </div>
 
 
-@section('js')
+@section('js-inline')
 @parent
 <script>
   $("#modal-user").iziModal({
@@ -160,7 +251,7 @@
 
 
         $("input[name='type']").val("edit");
-        $("button[type='submit']").text('Simpan');
+        $("#btn-submit").text('Simpan');
 
         $("#modal-user").iziModal('setTitle', 'Form Ubah Data Pengguna');
 
@@ -180,7 +271,7 @@
     else
     {
       $("input[name='type']").val("new");
-      $("button[type='submit']").text('Tambah');
+      $("#btn-submit").text('Tambah');
 
       $("#modal-user").iziModal('setTitle', 'Form Input Pengguna Baru');
       $("#modal-user").iziModal("open");
@@ -204,7 +295,7 @@
     var uri = type == 'new'? 'store' : type == 'edit' ? 'update' : 'delete';
     var url = SITE_URL + 'private/user/' + uri;
 
-    $("button[type='submit']").attr('disabled', true);
+    $("#btn-submit").attr('disabled', true);
     var formData = $('#frm-user').serializeArray();
 
     $.ajax({
@@ -217,35 +308,41 @@
 
 
       $('#error-message').html("");
+
       if (resp.status == 'error') 
       {
-       $("#error-message").html(
+        let errors = '';
+        $.each(resp.messages, function(index, val) {
+          errors += '<li>'+val+'</li>';
+        });
+        $("#error-message").html(
          `<div class=\"alert alert-danger\">
-         <strong>Ooops!</strong> Terdapat Error.<br><br>
+         <ul>
+         `         
+         +errors+
          `
-         +resp.messages+
-         `
+         </ul>
          </div>
          `);
-       $("#modal-user .iziModal-wrap").scrollTop(0);  
-     } else if (resp.status == 'success')
-     {
-      swalInfo('Berhasil', 'success','','2000')
-      .then((result) => {
+        $("#modal-user .iziModal-wrap").scrollTop(0);  
+      } else if (resp.status == 'success')
+      {
+        swalInfo('Berhasil', 'success','','2000')
+        .then((result) => {
 
-        location.reload();
-        
-      })
-    } else 
-    {
-      alert('gagal');
-    }
-  })
+          location.reload();
+
+        })
+      } else 
+      {
+        alert('gagal');
+      }
+    })
     .fail(function() {
       console.log("error post");
     })
     .always(function() {
-      $("button[type='submit']").attr('disabled', false);
+      $("#btn-submit").attr('disabled', false);
       console.log("complete post");
     });
 

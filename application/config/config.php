@@ -328,7 +328,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '29342qkajflsdfj3423423jlasfls';
 
 /*
 |--------------------------------------------------------------------------
@@ -382,7 +382,7 @@ $config['encryption_key'] = '';
 |
 */
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'kalender_edu';
+$config['sess_cookie_name'] = 'pegawai_jemmy';
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;

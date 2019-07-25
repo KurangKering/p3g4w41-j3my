@@ -11,6 +11,13 @@ class Private_Controller extends MY_Controller {
 		$this->load->model('M_roles');
 		$this->load->model('M_data_pegawai');
 		$this->load->model('M_data_dokumen');
+
+		$this->vars['ALL_ROLE'] = $this->M_roles->get();
+
+		if (!$this->session->userdata('user')) {
+			redirect('auth/login');
+		}
+
 	}
 
 

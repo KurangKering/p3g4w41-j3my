@@ -13,7 +13,8 @@
 
 	.table-berkas tbody tr{
 
-		border: 2px solid;
+		border-bottom: 2px solid;
+		border-top: 2px solid;
 	}
 
 	.table-berkas > tbody > tr:hover {
@@ -170,14 +171,21 @@
 			<div class="card">
 				<div class="header" style="border-bottom: none;">
 					<h2>
-						BERKAS
+						DAFTAR BERKAS
 					</h2>
 					<ul class="header-dropdown m-r--5">
 						
 					</ul>
 				</div>
 				<div class="body">
-
+					<div id="error-berkas-kosong">
+						<?php if(count($dataPegawai->data_dokumen) <= 0  ): ?>
+						<div class="alert alert-warning alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+							HARAP MENGUNDUH BERKAS-BERKAS
+						</div>
+						<?php endif; ?>
+					</div>
 					<table class="table table-berkas table-hover">
 						<thead>
 							<tr>
@@ -201,8 +209,14 @@
 									</form>
 								</td>
 								<td style="width: 30%">
-									<div class="preview-area">
-										<img width="100%" style="max-height: 150px" src="<?php echo e(site_url('media/'.$dataPegawai->data_dokumen[$key])); ?>" alt="" id="img-preview-<?php echo e($dokumen['html']); ?>">
+
+									<?php
+									$srcImg = site_url('media/'.$dataPegawai->data_dokumen[$key]);
+									?>
+									<div class="preview-area" id="preview-area-<?php echo e($dokumen['html']); ?>">
+										<a href="<?php echo e($srcImg); ?>" id="hrefImg-<?php echo e($dokumen['html']); ?>">
+											<img width="100%" style="max-height: 150px" src="<?php echo e(site_url('media/'.$dataPegawai->data_dokumen[$key])); ?>" alt="" id="img-preview-<?php echo e($dokumen['html']); ?>">
+										</a>
 
 									</div>	
 								</td>
@@ -253,6 +267,16 @@
 
 <?php $__env->startSection('js-inline'); ?>
 <script>
+
+	let adaDokumen = "<?php echo e(count($dataPegawai->data_dokumen) > 0 ? '1' : '0'); ?>";
+
+	if (adaDokumen == '0') {
+
+		$('html, body').animate({
+			scrollTop: $("#error-berkas-kosong").offset().top
+		}, 2000);
+	}
+
 	<?php
 	$arrayBerkas= hBerkasDokumen();
 	$jsArrayBerkas = json_encode($arrayBerkas);
@@ -261,6 +285,7 @@
 
 	$.each(arrayBerkas, function(index, val) {
 		indexOption = camelize('frm-' + val['html']);
+		lightGallery(document.getElementById("preview-area-"+val['html']));
 
 		Dropzone.options[indexOption] = {
 			maxFiles: 1,
@@ -298,8 +323,11 @@
 					$('.dz-image').css({"width":"100%", "height":"auto"});
 					resp = responseText[0];
 					$img = $("#img-preview-"+val['html']);
+					$hrefImg = $("#hrefImg-"+val['html']);
+					urlImage = SITE_URL + 'media/'+resp['file_name'];
 					if (resp['status'] == 'success') {
-						$img.attr('src', SITE_URL + 'media/'+resp['file_name']);
+						$img.attr('src', urlImage );
+						$hrefImg.attr('href',  urlImage);
 						$img.attr('width', '100%');
 						$img.attr('height', '100%');
 
@@ -368,7 +396,6 @@
 		});
 
 	})
-
 
 
 

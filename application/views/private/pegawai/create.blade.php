@@ -34,12 +34,12 @@
 
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">nama</label>
+								<label for="email_address_2">Nama</label>
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="text" class="form-control" name="nama" id="nama" placeholder="nama">
+										<input type="text" class="form-control" name="nama" id="nama" >
 
 									</div>
 								</div>
@@ -48,12 +48,12 @@
 
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">jabatan</label>
+								<label for="email_address_2">Jabatan</label>
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="text" class="form-control" name="jabatan" id="jabatan" placeholder="jabatan">
+										<input type="text" class="form-control" name="jabatan" id="jabatan" >
 										
 									</div>
 								</div>
@@ -61,12 +61,12 @@
 						</div>
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">nip</label>
+								<label for="email_address_2">NIP</label>
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="text" class="form-control" name="nip" id="nip" placeholder="nip">
+										<input type="text" class="form-control" name="nip" id="nip" >
 										
 									</div>
 								</div>
@@ -74,12 +74,12 @@
 						</div>
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">tempat_lahir</label>
+								<label for="email_address_2">Tempat Lahir</label>
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" placeholder="tempat_lahir">
+										<input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" >
 										
 									</div>
 								</div>
@@ -87,12 +87,12 @@
 						</div>
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">tanggal_lahir</label>
+								<label for="email_address_2">Tanggal Lahir</label>
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" placeholder="tanggal_lahir">
+										<input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" >
 										
 									</div>
 								</div>
@@ -100,12 +100,12 @@
 						</div>
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">alamat</label>
+								<label for="email_address_2">Alamat</label>
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="text" class="form-control" name="alamat" id="alamat" placeholder="alamat">
+										<input type="text" class="form-control" name="alamat" id="alamat" >
 										
 									</div>
 								</div>
@@ -113,12 +113,12 @@
 						</div>
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">pendidikan_terakhir</label>
+								<label for="email_address_2">Pendidikan Terakhir</label>
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="pendidikan_terakhir">
+										<input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" >
 										
 									</div>
 								</div>
@@ -126,12 +126,12 @@
 						</div>
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">pangkat_golongan</label>
+								<label for="email_address_2">Pangkat/Golongan</label>
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="text" class="form-control" name="pangkat_golongan" id="pangkat_golongan" placeholder="pangkat_golongan">
+										<input type="text" class="form-control" name="pangkat_golongan" id="pangkat_golongan" >
 										
 									</div>
 								</div>

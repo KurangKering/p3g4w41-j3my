@@ -93,8 +93,7 @@
  </div>
 </div>
 
-
-@section('js')
+@section('js-inline')
 @parent
 <script>
   $("#modal-user").iziModal({

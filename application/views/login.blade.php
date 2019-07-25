@@ -1,136 +1,193 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<title>## LOGIN AREA ##</title>
+	<!-- Favicon-->
+	<link rel="icon" href="{{ site_url('assets/templates/backend2/favicon.ico') }}" type="image/x-icon">
 
-	<!-- Global stylesheets -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-	<link href="<?= base_url('assets/template/backend/assets/css/icons/icomoon/styles.css')  ?>" rel="stylesheet" type="text/css">
-	<link href="<?= base_url('assets/template/backend/assets/css/bootstrap.css')  ?>" rel="stylesheet" type="text/css">
-	<link href="<?= base_url('assets/template/backend/assets/css/core.css')  ?>" rel="stylesheet" type="text/css">
-	<link href="<?= base_url('assets/template/backend/assets/css/components.css')  ?>" rel="stylesheet" type="text/css">
-	<link href="<?= base_url('assets/template/backend/assets/css/colors.css')  ?>" rel="stylesheet" type="text/css">
-	<!-- /global stylesheets -->
+	<!-- Google Fonts -->
+	<style>
+		/* roboto-regular - latin_cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			src: url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.eot") }}); /* IE9 Compat Modes */
+			src: local('Roboto'), local('Roboto-Regular'),
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.eot?#iefix") }}) format('embedded-opentype'), /* IE6-IE8 */
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.woff2") }}) format('woff2'), /* Super Modern Browsers */
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.woff") }}) format('woff'), /* Modern Browsers */
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.ttf") }}) format('truetype'), /* Safari, Android, iOS */
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.svg#Roboto") }}) format('svg'); /* Legacy iOS */
+		}
+		/* roboto-700 - latin_cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			src: url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.eot") }}); /* IE9 Compat Modes */
+			src: local('Roboto Bold'), local('Roboto-Bold'),
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.eot?#iefix") }}) format('embedded-opentype'), /* IE6-IE8 */
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.woff2") }}) format('woff2'), /* Super Modern Browsers */
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.woff") }}) format('woff'), /* Modern Browsers */
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.ttf") }}) format('truetype'), /* Safari, Android, iOS */
+			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.svg#Roboto") }}) format('svg'); /* Legacy iOS */
+		}
 
-	<!-- Core JS files -->
-	<script type="text/javascript" src="<?= base_url('assets/template/backend/assets/js/plugins/loaders/pace.min.js')  ?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/template/backend/assets/js/core/libraries/jquery.min.js')  ?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/template/backend/assets/js/core/libraries/bootstrap.min.js')  ?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/template/backend/assets/js/plugins/loaders/blockui.min.js')  ?>"></script>
-	<!-- /core JS files -->
+		/* fallback */
+		@font-face {
+			font-family: 'Material Icons';
+			font-style: normal;
+			font-weight: 400;
+			src: url({{ site_url('assets/templates/backend2/iconfont/MaterialIcons-Regular.woff2') }}) format('woff2');
+		}
 
+		.material-icons {
+			font-family: 'Material Icons';
+			font-weight: normal;
+			font-style: normal;
+			font-size: 24px;
+			line-height: 1;
+			letter-spacing: normal;
+			text-transform: none;
+			display: inline-block;
+			white-space: nowrap;
+			word-wrap: normal;
+			direction: ltr;
+			-webkit-font-feature-settings: 'liga';
+			-webkit-font-smoothing: antialiased;
+		}
+	</style>
 
-	<!-- Theme JS files -->
-	<script type="text/javascript" src="<?= base_url('assets/template/backend/assets/js/core/app.js')  ?>"></script>
-	<!-- /theme JS files -->
+	<!-- Bootstrap Core Css -->
+	<link href="{{ site_url('assets/templates/backend2/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
+	<!-- Waves Effect Css -->
+	<link href="{{ site_url('assets/templates/backend2/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+
+	<!-- Animation Css -->
+	<link href="{{ site_url('assets/templates/backend2/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+
+	<!-- Custom Css -->
+	<link href="{{ site_url('assets/templates/backend2/css/style.css') }}" rel="stylesheet">
+	<script>
+		const SITE_URL = "{{ site_url() }}";
+	</script>
 </head>
 
-<body class="login-container">
-
-	<!-- Main navbar -->
-	<div class="navbar navbar-inverse">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="index.html"><img src="<?= base_url('assets/template/backend/assets/images/logo_light.png')  ?>" alt=""></a>
-
-			<ul class="nav navbar-nav pull-right visible-xs-block">
-				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
-			</ul>
+<body class="login-page">
+	<div class="login-box">
+		<div class="logo">
+			<a href="javascript:void(0);"><b>SAP</b></a>
+			<small>SISTEM ARSIP PEGAWAI</small>
 		</div>
-
-		<div class="navbar-collapse collapse" id="navbar-mobile">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="#">
-						<i class="icon-display4"></i> <span class="visible-xs-inline-block position-right"> Go to website</span>
-					</a>
-				</li>
-
-				<li>
-					<a href="#">
-						<i class="icon-user-tie"></i> <span class="visible-xs-inline-block position-right"> Contact admin</span>
-					</a>
-				</li>
-
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown">
-						<i class="icon-cog3"></i>
-						<span class="visible-xs-inline-block position-right"> Options</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- /main navbar -->
-
-
-	<!-- Page container -->
-	<div class="page-container">
-
-		<!-- Page content -->
-		<div class="page-content">
-
-			<!-- Main content -->
-			<div class="content-wrapper">
-
-				<!-- Content area -->
-				<div class="content">
-
-					<!-- Simple login form -->
-					<form action="{{ site_url('auth/do_login_admin') }}" method="POST">
-						<div class="panel panel-body login-form">
-							<div class="text-center">
-								<div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
-								<h5 class="content-group">Login to your account <small class="display-block">Enter your credentials below</small></h5>
-							</div>
-
-							<div class="form-group has-feedback has-feedback-left">
-								<input type="text" name="username" class="form-control" placeholder="Username">
-								<div class="form-control-feedback">
-									<i class="icon-user text-muted"></i>
-								</div>
-							</div>
-
-							<div class="form-group has-feedback has-feedback-left">
-								<input type="password" name="password" class="form-control" placeholder="Password">
-								<div class="form-control-feedback">
-									<i class="icon-lock2 text-muted"></i>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<button type="submit"  class="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 position-right"></i></button>
-							</div>
-
-							<div class="text-center">
-								<a href="login_password_recover.html">Forgot password?</a>
-							</div>
-						</div>
-					</form>
-					<!-- /simple login form -->
-
-
-					<!-- Footer -->
-					<div class="footer text-muted text-center">
-						&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
-					</div>
-					<!-- /footer -->
-
+		<div class="card">
+			<div class="body">
+				<div id="error-message">
 				</div>
-				<!-- /content area -->
+				<form id="sign_in" method="POST">
+					{{-- <div class="msg">Sign in to start your session</div> --}}
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="material-icons">person</i>
+						</span>
+						<div class="form-line">
+							<input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+						</div>
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="material-icons">lock</i>
+						</span>
+						<div class="form-line">
+							<input type="password" class="form-control" name="password" placeholder="Password" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-8 p-t-5"></div>
+						<div class="col-xs-4">
+							<button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+						</div>
+					</div>
 
+				</form>
 			</div>
-			<!-- /main content -->
-
 		</div>
-		<!-- /page content -->
-
 	</div>
-	<!-- /page container -->
 
+	<!-- Jquery Core Js -->
+	<script src="{{ site_url('assets/templates/backend2/plugins/jquery/jquery.min.js') }}"></script>
+
+	<!-- Bootstrap Core Js -->
+	<script src="{{ site_url('assets/templates/backend2/plugins/bootstrap/js/bootstrap.js') }}"></script>
+
+	<!-- Waves Effect Plugin Js -->
+	<script src="{{ site_url('assets/templates/backend2/plugins/node-waves/waves.js') }}"></script>
+
+	<!-- Validation Plugin Js -->
+	<script src="{{ site_url('assets/templates/backend2/plugins/jquery-validation/jquery.validate.js') }}"></script>
+
+	<!-- Custom Js -->
+	<script src="{{ site_url('assets/templates/backend2/js/admin.js') }}"></script>
+
+
+	<script>
+		$("#sign_in").submit(function(e) {
+			e.preventDefault();
+
+			let formData = $(this).serializeArray();
+
+			$.ajax({
+				url: SITE_URL + 'auth/do_login',
+				type: 'POST',
+				dataType: 'json',
+				data: formData,
+			})
+			.done(function(resp) {
+				$('#error-message').html("");
+
+				if (resp.status == 'error') 
+				{
+					$("#error-message").html(
+						`<div class=\"alert alert-warning text-center\">
+						<span class=\"text-center\">AKUN TIDAK DITEMUKAN</span>
+						</div>
+						`);
+				} else {
+
+					$("#error-message").html(
+						`<div class=\"alert alert-success text-center\">
+						<span class=\"text-center\">BERHASIL LOGIN</span>
+						</div>
+						`);
+					$("button[type='submit']").attr('disabled', true);
+					setTimeout(function() {
+						location.href = SITE_URL + 'private';
+					}, 1000);
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+
+		})
+
+		function afterLogin (doSomething, timer) {
+			return new Promise(function(resolve, reject) {
+				setTimeout(function() {
+					doSomething();
+					resolve('done');
+				}, timer);
+			});
+		};
+	</script>
 </body>
+
 </html>
