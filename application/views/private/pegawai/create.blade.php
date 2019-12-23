@@ -1,177 +1,108 @@
-@extends('layouts.backend2')
+@extends('layouts.backend3')
+@section('page-title', 'Tambah Data Pegawai')
 @section('css-import')
 
+
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/select2/css/select2.css') }}" />
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css') }}" />
 
 
 @endsection
 @section('content')
+<div class="row">
+	<div class="col-md-12">
+		<div id="error-message">
 
-<div class="container-fluid">
-	<div class="block-header">
-		<h2>
-			
-			TAMBAH DATA PEGAWAI
+		</div>
+		<form class="form-horizontal form-bordered" id="frm-data-diri">
 
-		</h2>
-	</div>
-	<!-- Basic Examples -->
-	<div class="row clearfix">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div class="card">
-				<div class="header" style="border-bottom: none;">
-					<h2>
-						DATA DIRI
-					</h2>
-					<ul class="header-dropdown m-r--5">
-						
-					</ul>
-				</div>
-				<div class="body">
-					<div id="error-message">
+			<section class="panel">
+				<header class="panel-heading"></header>
+				<div class="panel-body">
 
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="nama">Nama</label>
+						<div class="col-md-6">
+							<input type="text" class="form-control" id="nama" name="nama">
+						</div>
 					</div>
-					<form class="form-horizontal" id="frm-data-diri">
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="jenis_kelamin">Jenis Kelamin</label>
+						<div class="col-md-6">
+							<select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+								@foreach (_hJenisKelamin() as $k => $jk)
+								<option value="{{ $k }}">{{ $jk }}</option>
+								@endforeach
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="jabatan">Jabatan</label>
+						<div class="col-md-6">
+							<input type="text" class="form-control" name="jabatan" id="jabatan" >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="nip">NIP</label>
+						<div class="col-md-6">
+							<input type="text" class="form-control" name="nip" id="nip" >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="tempat_lahir">Tempat Lahir</label>
+						<div class="col-md-6">
+							<input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="tanggal_lahir">Tanggal Lahir</label>
+						<div class="col-md-6">
+							<input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="alamat">Alamat</label>
+						<div class="col-md-6">
+							<textarea name="alamat" id="alamat" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="pendidikan_terakhir">Pendidikan Terakhir</label>
+						<div class="col-md-6">
+							<input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" >
+						</div>
+					</div>
 
-						<div class="row clearfix">
-							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">Nama</label>
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-								<div class="form-group">
-									<div class="form-line">
-										<input type="text" class="form-control" name="nama" id="nama" >
-
-									</div>
-								</div>
-							</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="pangkat_golongan">Pangkat/Golongan</label>
+						<div class="col-md-6">
+							<input type="text" class="form-control" name="pangkat_golongan" id="pangkat_golongan" >
 						</div>
-
-						<div class="row clearfix">
-							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">Jabatan</label>
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-								<div class="form-group">
-									<div class="form-line">
-										<input type="text" class="form-control" name="jabatan" id="jabatan" >
-										
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row clearfix">
-							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">NIP</label>
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-								<div class="form-group">
-									<div class="form-line">
-										<input type="text" class="form-control" name="nip" id="nip" >
-										
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row clearfix">
-							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">Tempat Lahir</label>
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-								<div class="form-group">
-									<div class="form-line">
-										<input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" >
-										
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row clearfix">
-							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">Tanggal Lahir</label>
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-								<div class="form-group">
-									<div class="form-line">
-										<input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" >
-										
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row clearfix">
-							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">Alamat</label>
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-								<div class="form-group">
-									<div class="form-line">
-										<input type="text" class="form-control" name="alamat" id="alamat" >
-										
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row clearfix">
-							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">Pendidikan Terakhir</label>
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-								<div class="form-group">
-									<div class="form-line">
-										<input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" >
-										
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row clearfix">
-							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-								<label for="email_address_2">Pangkat/Golongan</label>
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-								<div class="form-group">
-									<div class="form-line">
-										<input type="text" class="form-control" name="pangkat_golongan" id="pangkat_golongan" >
-										
-									</div>
-								</div>
-							</div>
-						</div>
-						
-
-
-						<div class="row clearfix">
-							<div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-								<button type="submit" class="btn btn-primary m-t-15 waves-effect">SIMPAN</button>
-							</div>
-						</div>
-					</form>
+					</div>
 
 					
 				</div>
-			</div>
-			
-		</div>
+				<footer class="panel-footer">
+					<div class="row">
+						<div class="col-sm-9 col-sm-offset-3">
+							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="reset" class="btn btn-default">Reset</button>
+						</div>
+					</div>
+				</footer>
+
+			</section>
+		</form>
+
 	</div>
-	<!-- #END# Basic Examples -->
-	<!-- Exportable Table -->
 	
-	<!-- #END# Exportable Table -->
 </div>
 
-
-<!-- /.container -->
-
-
-
-
-{{-- @include('private.user.modal_user') --}}
+@include('private.pegawai.modal_pegawai')
 @endsection
-@section('js-import')
-
-@endsection
-
 @section('js-inline')
+
 <script>
 	let $frmDataDiri = $("#frm-data-diri");
 
@@ -199,9 +130,9 @@
 					`<div class=\"alert alert-danger\">
 					<strong>Ooops!</strong> Terdapat Error.<br><br>
 					<ul>
-					`
+					<strong>`
 					+listError+
-					`
+					`</strong>
 					</li>
 					</div>
 					`);

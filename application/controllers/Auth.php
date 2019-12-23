@@ -13,11 +13,19 @@ class Auth extends CI_Controller {
 	}
 	public function index()
 	{
-			redirect('auth/login');
+		redirect('auth/login');
 	}
 
 	public function login()
 	{
+
+
+
+		// $mpdf = new \Mpdf\Mpdf();
+		// $mpdf->WriteHTML('<h1>Hello world!</h1>');
+		// $mpdf->Output();
+
+		// return;
 		return view('login');
 	}
 

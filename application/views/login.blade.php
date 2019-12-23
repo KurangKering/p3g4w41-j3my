@@ -1,193 +1,220 @@
 
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html class="fixed">
 <head>
+
+	<!-- Basic -->
 	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<title>## LOGIN AREA ##</title>
-	<!-- Favicon-->
-	<link rel="icon" href="{{ site_url('assets/templates/backend2/favicon.ico') }}" type="image/x-icon">
 
-	<!-- Google Fonts -->
-	<style>
-		/* roboto-regular - latin_cyrillic-ext */
-		@font-face {
-			font-family: 'Roboto';
-			font-style: normal;
-			font-weight: 400;
-			src: url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.eot") }}); /* IE9 Compat Modes */
-			src: local('Roboto'), local('Roboto-Regular'),
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.eot?#iefix") }}) format('embedded-opentype'), /* IE6-IE8 */
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.woff2") }}) format('woff2'), /* Super Modern Browsers */
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.woff") }}) format('woff'), /* Modern Browsers */
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.ttf") }}) format('truetype'), /* Safari, Android, iOS */
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-regular.svg#Roboto") }}) format('svg'); /* Legacy iOS */
-		}
-		/* roboto-700 - latin_cyrillic-ext */
-		@font-face {
-			font-family: 'Roboto';
-			font-style: normal;
-			font-weight: 700;
-			src: url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.eot") }}); /* IE9 Compat Modes */
-			src: local('Roboto Bold'), local('Roboto-Bold'),
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.eot?#iefix") }}) format('embedded-opentype'), /* IE6-IE8 */
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.woff2") }}) format('woff2'), /* Super Modern Browsers */
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.woff") }}) format('woff'), /* Modern Browsers */
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.ttf") }}) format('truetype'), /* Safari, Android, iOS */
-			url({{ site_url("assets/templates/backend2/fonts/roboto-v19-latin_cyrillic-ext-700.svg#Roboto") }}) format('svg'); /* Legacy iOS */
-		}
+	<meta name="keywords" content="HTML5 Admin Template" />
+	<meta name="description" content="Porto Admin - Responsive HTML5 Template">
+	<meta name="author" content="okler.net">
 
-		/* fallback */
-		@font-face {
-			font-family: 'Material Icons';
-			font-style: normal;
-			font-weight: 400;
-			src: url({{ site_url('assets/templates/backend2/iconfont/MaterialIcons-Regular.woff2') }}) format('woff2');
-		}
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		.material-icons {
-			font-family: 'Material Icons';
-			font-weight: normal;
-			font-style: normal;
-			font-size: 24px;
-			line-height: 1;
-			letter-spacing: normal;
-			text-transform: none;
-			display: inline-block;
-			white-space: nowrap;
-			word-wrap: normal;
-			direction: ltr;
-			-webkit-font-feature-settings: 'liga';
-			-webkit-font-smoothing: antialiased;
-		}
-	</style>
+	<!-- Web Fonts  -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
-	<!-- Bootstrap Core Css -->
-	<link href="{{ site_url('assets/templates/backend2/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/bootstrap/css/bootstrap.css') }}" />
 
-	<!-- Waves Effect Css -->
-	<link href="{{ site_url('assets/templates/backend2/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+	<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/font-awesome/css/font-awesome.css') }}" />
+	<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/magnific-popup/magnific-popup.css') }}" />
+	<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css') }}" />
 
-	<!-- Animation Css -->
-	<link href="{{ site_url('assets/templates/backend2/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/stylesheets/theme.css') }}" />
 
-	<!-- Custom Css -->
-	<link href="{{ site_url('assets/templates/backend2/css/style.css') }}" rel="stylesheet">
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/stylesheets/skins/default.css') }}" />
+
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/stylesheets/theme-custom.css') }}">
+
+	<!-- Head Libs -->
+	<script src="{{ site_url('assets/templates/backend3/assets/vendor/modernizr/modernizr.js') }}"></script>
+
 	<script>
 		const SITE_URL = "{{ site_url() }}";
 	</script>
-</head>
+	<title>Login area Sistem Arsip Pegawai</title>
 
-<body class="login-page">
-	<div class="login-box">
-		<div class="logo">
-			<a href="javascript:void(0);"><b>SAP</b></a>
-			<small>SISTEM ARSIP PEGAWAI</small>
-		</div>
-		<div class="card">
-			<div class="body">
-				<div id="error-message">
+	<style>
+		.login-page { margin: 0; padding: 0; position: relative; background: #264869;}
+		.login-wrapper { width: 100%; position: relative; }
+		.login-drop img { min-width: 100%; min-height: 100%; }
+		.login-drop { z-index: 90 !important; position: absolute; height: 320px !important; overflow: hidden; background: #fff; width: 100%}
+		.top-brand { color: #0088cc; font-size: 0.9em; line-height: 1.2em; }
+		.top-brand span { font-size: 1.3em; color: #444 }
+
+		.login-box-ex { margin: 1% auto 0 auto; }
+
+		.logo-brand { text-align: center; margin: 0 0 10px 0 }
+		.logo-brand p a { color: #fff; }
+
+		.fit-logo img { width: 85px;}
+		.login-box-body { border: 1px solid #d3e1ed; padding: 5px 20px}
+		.login-logo { letter-spacing: -1px; font-size: 4.0em; line-height: 23px; color: #fff;  margin: 0 0 10px 0; padding: 15px 0 5px 0;}
+		.login-logo small { font-size: 0.3em; letter-spacing: 0}
+		.login-instansi {
+			letter-spacing: -1px;
+			text-align: center;
+			font-size: 1.8em;
+			line-height: 1.1em;
+			color: #fff;
+			margin: 0;
+			padding: 10px 0 5px 0;
+			} /*background: url('../images/drop.png'); */
+			.clear { clear: both }
+			.hide { display: none; }
+
+
+
+		</style>
+	</head>
+	<body>
+		<!-- start: page -->
+
+		<section class="body-sign">
+			<div class="center-sign">
+				<div class="login-instansi"></div>
+
+				<div class="panel panel-sign">
+					{{-- <div class="panel-title-sign mt-xl text-right">
+						<h2 class="title text-uppercase text-weight-bold m-none"><i class="fa fa-user mr-xs"></i> Sign In</h2>
+					</div> --}}
+
+
+					<div class="panel-body" style="">
+
+						<div id="error-message">
+							<div class="alert alert-info">
+
+								Login Sistem Arsip Pegawai 
+								<br>
+							</div>
+						</div>
+						<form id="sign_in" method="post">
+							<div class="form-group mb-lg">
+								<label>Username</label>
+								<div class="input-group input-group-icon">
+									<input required name="username" type="text" class="form-control input-lg" />
+									<span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-user"></i>
+										</span>
+									</span>
+								</div>
+							</div>
+
+							<div class="form-group mb-lg">
+								<div class="clearfix">
+									<label class="pull-left">Password</label>
+									{{-- <a href="pages-recover-password.html" class="pull-right">Lost Password?</a> --}}
+								</div>
+								<div class="input-group input-group-icon">
+									<input required name="password" type="password" class="form-control input-lg" />
+									<span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-lock"></i>
+										</span>
+									</span>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-8">
+
+								</div>
+								<div class="col-sm-4 text-right">
+									<button type="submit" class="btn btn-primary hidden-xs">Sign In</button>
+									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
+								</div>
+							</div>
+
+
+
+
+
+
+						</form>
+					</div>
 				</div>
-				<form id="sign_in" method="POST">
-					{{-- <div class="msg">Sign in to start your session</div> --}}
-					<div class="input-group">
-						<span class="input-group-addon">
-							<i class="material-icons">person</i>
-						</span>
-						<div class="form-line">
-							<input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
-						</div>
-					</div>
-					<div class="input-group">
-						<span class="input-group-addon">
-							<i class="material-icons">lock</i>
-						</span>
-						<div class="form-line">
-							<input type="password" class="form-control" name="password" placeholder="Password" required>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-8 p-t-5"></div>
-						<div class="col-xs-4">
-							<button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
-						</div>
-					</div>
 
-				</form>
 			</div>
-		</div>
-	</div>
+		</section>
+		<!-- end: page -->
 
-	<!-- Jquery Core Js -->
-	<script src="{{ site_url('assets/templates/backend2/plugins/jquery/jquery.min.js') }}"></script>
+		<!-- Vendor -->
+		<script src="{{ site_url('assets/templates/backend3/assets/vendor/jquery/jquery.js') }}"></script>
+		<script src="{{ site_url('assets/templates/backend3/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js') }}"></script>
+		<script src="{{ site_url('assets/templates/backend3/assets/vendor/bootstrap/js/bootstrap.js') }}"></script>
+		<script src="{{ site_url('assets/templates/backend3/assets/vendor/nanoscroller/nanoscroller.js') }}"></script>
+		<script src="{{ site_url('assets/templates/backend3/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+		<script src="{{ site_url('assets/templates/backend3/assets/vendor/magnific-popup/jquery.magnific-popup.js') }}"></script>
+		<script src="{{ site_url('assets/templates/backend3/assets/vendor/jquery-placeholder/jquery-placeholder.js') }}"></script>
 
-	<!-- Bootstrap Core Js -->
-	<script src="{{ site_url('assets/templates/backend2/plugins/bootstrap/js/bootstrap.js') }}"></script>
+		<!-- Theme Base, Components and Settings -->
+		<script src="{{ site_url('assets/templates/backend3/assets/javascripts/theme.js') }}"></script>
 
-	<!-- Waves Effect Plugin Js -->
-	<script src="{{ site_url('assets/templates/backend2/plugins/node-waves/waves.js') }}"></script>
+		<!-- Theme Custom -->
+		<script src="{{ site_url('assets/templates/backend3/assets/javascripts/theme.custom.js') }}"></script>
 
-	<!-- Validation Plugin Js -->
-	<script src="{{ site_url('assets/templates/backend2/plugins/jquery-validation/jquery.validate.js') }}"></script>
+		<!-- Theme Initialization Files -->
+		<script src="{{ site_url('assets/templates/backend3/assets/javascripts/theme.init.js') }}"></script>
+		<script>
+			$("#sign_in").submit(function(e) {
+				e.preventDefault();
 
-	<!-- Custom Js -->
-	<script src="{{ site_url('assets/templates/backend2/js/admin.js') }}"></script>
+				let formData = $(this).serializeArray();
 
+				$.ajax({
+					url: SITE_URL + 'auth/do_login',
+					type: 'POST',
+					dataType: 'json',
+					data: formData,
+				})
+				.done(function(resp) {
+					$('#error-message').html("");
 
-	<script>
-		$("#sign_in").submit(function(e) {
-			e.preventDefault();
+					if (resp.status == 'error') 
+					{
+						$("#error-message").html(
+							`<div class=\"alert alert-warning \">
+							<span class=\"\">Akun Tidak Ditemukan</span>
+							</div>
+							`);
+					} else {
 
-			let formData = $(this).serializeArray();
+						$("#error-message").html(
+							`<div class=\"alert alert-success \">
+							<span class=\"\">Berhasil Login</span>
+							</div>
+							`);
+						$("button[type='submit']").attr('disabled', true);
+						setTimeout(function() {
+							location.href = SITE_URL + 'private';
+						}, 1000);
+					}
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
 
-			$.ajax({
-				url: SITE_URL + 'auth/do_login',
-				type: 'POST',
-				dataType: 'json',
-				data: formData,
 			})
-			.done(function(resp) {
-				$('#error-message').html("");
 
-				if (resp.status == 'error') 
-				{
-					$("#error-message").html(
-						`<div class=\"alert alert-warning text-center\">
-						<span class=\"text-center\">AKUN TIDAK DITEMUKAN</span>
-						</div>
-						`);
-				} else {
-
-					$("#error-message").html(
-						`<div class=\"alert alert-success text-center\">
-						<span class=\"text-center\">BERHASIL LOGIN</span>
-						</div>
-						`);
-					$("button[type='submit']").attr('disabled', true);
+			function afterLogin (doSomething, timer) {
+				return new Promise(function(resolve, reject) {
 					setTimeout(function() {
-						location.href = SITE_URL + 'private';
-					}, 1000);
-				}
-			})
-			.fail(function() {
-				console.log("error");
-			})
-			.always(function() {
-				console.log("complete");
-			});
-
-		})
-
-		function afterLogin (doSomething, timer) {
-			return new Promise(function(resolve, reject) {
-				setTimeout(function() {
-					doSomething();
-					resolve('done');
-				}, timer);
-			});
-		};
-	</script>
-</body>
-
-</html>
+						doSomething();
+						resolve('done');
+					}, timer);
+				});
+			};
+		</script>
+	</body>
+	</html>

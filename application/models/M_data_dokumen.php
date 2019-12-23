@@ -6,6 +6,7 @@ class M_data_dokumen extends Eloquent
 	protected $table = 'data_dokumen';
 	protected $fillable = [
 		'data_pegawai_id',
+		'photo_profil',
 		'sk_cpns',
 		'ka_npwp',
 		'sk_pns',

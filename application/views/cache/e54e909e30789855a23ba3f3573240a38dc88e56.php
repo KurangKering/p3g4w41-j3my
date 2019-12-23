@@ -44,6 +44,24 @@
 								</div>
 							</div>
 						</div>
+						<div class="row clearfix">
+							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+								<label for="email_address_2">Jenis Kelamin</label>
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+								<div class="form-group">
+									<div class="form-line">
+										<select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+											<?php $__currentLoopData = _hJenisKelamin(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $jk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+											<option value="<?php echo e($k); ?>"><?php echo e($jk); ?></option>
+											<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+										</select>
+										
+
+									</div>
+								</div>
+							</div>
+						</div>
 
 						<div class="row clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -104,7 +122,7 @@
 							<div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
 								<div class="form-group">
 									<div class="form-line">
-										<input type="text" class="form-control" name="alamat" id="alamat" >
+										<textarea name="alamat" id="alamat" class="form-control"></textarea>
 										
 									</div>
 								</div>

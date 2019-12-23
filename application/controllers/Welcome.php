@@ -20,7 +20,7 @@ class Welcome extends Private_Controller {
 	 */
 	public function index()
 	{
-		return view('layouts.backend2');
+		return view('private.dashboard');
 		
 	}
 

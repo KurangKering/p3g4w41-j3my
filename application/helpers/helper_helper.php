@@ -105,6 +105,7 @@ if (!function_exists('hBerkasDokumen')) {
 	function hBerkasDokumen($input = null) {
 		$arr = 
 		[
+			'photo_profil' => ['caption' => 'PHOTO PROFIL', 'html' => 'photo-profil'],
 			'sk_cpns' => ['caption' => 'SK CPNS', 'html' => 'sk-cpns'],
 			'ka_npwp' => ['caption' => 'KA NPWP', 'html' => 'ka-npwp'],
 			'sk_pns' => ['caption' => 'SK PNS', 'html' => 'sk-pns'],
@@ -145,3 +146,56 @@ if ( ! function_exists('hActiveMenu')) {
 	}
 }
 
+if ( ! function_exists('_hJenisKelamin')) {
+	function _hJenisKelamin( $input = null ) {
+		$arr = 
+		[
+			'lk' => 'Laki-Laki',
+			'pr' => 'Perempuan',
+		];
+
+		if ($input === null) {
+			return $arr;
+		}
+		return $arr[$input];
+	}
+}
+
+
+if (!function_exists('indoDate')) {
+	function indoDate ($timestamp = '', $date_format = 'l, j F Y | H:i', $suffix = '') {
+		if (trim ($timestamp) == '')
+		{
+			$timestamp = time ();
+		}
+		elseif (!ctype_digit ($timestamp))
+		{
+			$timestamp = strtotime ($timestamp);
+		}
+    # remove S (st,nd,rd,th) there are no such things in indonesia :p
+		$date_format = preg_replace ("/S/", "", $date_format);
+		$pattern = array (
+			'/Mon[^day]/','/Tue[^sday]/','/Wed[^nesday]/','/Thu[^rsday]/',
+			'/Fri[^day]/','/Sat[^urday]/','/Sun[^day]/','/Monday/','/Tuesday/',
+			'/Wednesday/','/Thursday/','/Friday/','/Saturday/','/Sunday/',
+			'/Jan[^uary]/','/Feb[^ruary]/','/Mar[^ch]/','/Apr[^il]/','/May/',
+			'/Jun[^e]/','/Jul[^y]/','/Aug[^ust]/','/Sep[^tember]/','/Oct[^ober]/',
+			'/Nov[^ember]/','/Dec[^ember]/','/January/','/February/','/March/',
+			'/April/','/June/','/July/','/August/','/September/','/October/',
+			'/November/','/December/',
+		);
+		$replace = array ( 'Sen','Sel','Rab','Kam','Jum','Sab','Min',
+			'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu',
+			'Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des',
+			'Januari','Februari','Maret','April','Juni','Juli','Agustus','September',
+			'Oktober','November','Desember',
+		);
+		$date = date ($date_format, $timestamp);
+		$date = preg_replace ($pattern, $replace, $date);
+		if ($suffix) {
+			$date = "{$date} {$suffix}";
+		}
+		return $date;
+	} 
+	
+}

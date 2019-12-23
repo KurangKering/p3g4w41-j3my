@@ -64,8 +64,9 @@ define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'developm
  * By default development will show errors but testing and live will hide them.
  */
 
-use Whoops\Handler\PrettyPageHandler;
 require __DIR__ . "/vendor/autoload.php";
+use Whoops\Handler\PrettyPageHandler;
+
 
 switch (ENVIRONMENT)
 {

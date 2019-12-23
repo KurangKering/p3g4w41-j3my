@@ -19,8 +19,8 @@ class User extends Private_Controller {
 	{	
 
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('email', 'Email', 'valid_email|trim|required');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'valid_email|trim|required|is_unique[users.email]');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[users.username]');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		$this->form_validation->set_rules('role_id', 'Hak Akses','required|min_length[1]');
 		if ($this->form_validation->run() === FALSE) {

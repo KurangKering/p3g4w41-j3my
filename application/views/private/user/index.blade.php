@@ -1,78 +1,73 @@
-@extends('layouts.backend2')
+@extends('layouts.backend3')
+@section('page-title', 'Data Pengguna')
+
 @section('css-import')
 
-<link href="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/select2/css/select2.css') }}" />
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css') }}" />
 
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/select2/css/select2.css') }}" />
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
+<link rel="stylesheet" href="{{ site_url('assets/templates/backend3/assets/vendor/pnotify/pnotify.custom.css') }}" />
 
 @endsection
 @section('content')
+<div class="row">
+	<div class="col-md-12">
 
-<div class="container-fluid">
-	<div class="block-header">
-		<h2>
-			
-			DATA PENGGUNA
-
-		</h2>
-	</div>
-	<!-- Basic Examples -->
-	<div class="row clearfix">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div class="card">
-				<div class="header" style="border-bottom: none;">
-					<h2>
-					</h2>
-					<ul class="header-dropdown m-r--5">
-						<li class="dropdown">
-							<button class="btn btn-info btn-md" onclick="show_modal()" type="button">Tambah Pengguna</button>
-							
-						</li>
-					</ul>
+		<section class="panel">
+			<header class="panel-heading">
+				<div class="panel-actions">
+					<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+					<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
 				</div>
-				<div class="body">
-					<div class="table-responsive">
-						<table id="example1" class="table table-bordered table-striped">
-							<thead>
-								<tr>
-									<th>Nama</th>
-									<th>Username</th>
-									<th>Email</th>
-									<th>Action</th>
-								</tr>
-							</thead>
-							<tbody>
 
-								@foreach ($dataUsers as $user)
-								<tr>
-									
-									<td>{{ $user->nama }}</td>
-									<td>{{ $user->username }}</td>
-									<td>{{ $user->email }}</td>
-									<td style="width: 1%; white-space: nowrap">
-										<a class="btn btn-success" onclick="show_modal({{ $user->id }})">Edit</a>
-										<button type="button" class="btn btn-warning" onclick="delete_user({{ $user->id }})">Delete</button>
-									</td>
-
-								</tr>
-
-								@endforeach
-
-							</tbody>
-
-						</table>
-					</div>
+				<div class="panel-title">
+					<button class="btn btn-info btn-md" onclick="show_modal()" type="button">Tambah Pengguna</button>
+					
+					
 				</div>
+			</header>
+			<div class="panel-body">
+				<table id="example1" class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Nama</th>
+							<th>Username</th>
+							<th>Email</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						@foreach ($dataUsers as $user)
+						<tr>
+
+							<td>{{ $user->nama }}</td>
+							<td>{{ $user->username }}</td>
+							<td>{{ $user->email }}</td>
+							<td style="width: 1%; white-space: nowrap">
+								<button type="button" class="btn btn-default" onclick="show_modal({{ $user->id }})"><i class="fa fa-pencil"></i></button>
+								<button type="button" class="btn btn-default" onclick="delete_user({{ $user->id }})"><i class="fa fa-trash-o"></i></button>
+
+							</td>
+
+						</tr>
+
+						@endforeach
+
+					</tbody>
+
+				</table>
 			</div>
-		</div>
+		</section>
 	</div>
-	<!-- #END# Basic Examples -->
-	<!-- Exportable Table -->
 	
-	<!-- #END# Exportable Table -->
 </div>
 
 
-<!-- /.container -->
+
 
 
 
@@ -81,19 +76,21 @@
 @endsection
 @section('js-import')
 <!-- Jquery DataTable Plugin Js -->
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/jquery.dataTables.js') }}"></script>
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js') }}"></script>
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js') }}"></script>
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/buttons.flash.min.js') }}"></script>
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/jszip.min.js') }}"></script>
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/pdfmake.min.js') }}"></script>
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/vfs_fonts.js') }}"></script>
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/buttons.html5.min.js') }}"></script>
-<script src="{{ site_url('assets/templates/backend2/plugins/jquery-datatable/extensions/export/buttons.print.min.js') }}"></script>
+<script src="{{ site_url('assets/templates/backend3/assets/vendor/select2/js/select2.js') }}"></script>
+<script src="{{ site_url('assets/templates/backend3/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js') }}"></script>
+<script src="{{ site_url('assets/templates/backend3/assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js') }}"></script>
+
+<script src="{{ site_url('assets/templates/backend3/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js') }}"></script>
+<script src="{{ site_url('assets/templates/backend3/assets/vendor/select2/js/select2.js') }}"></script>
+<script src="{{ site_url('assets/templates/backend3/assets/vendor/pnotify/pnotify.custom.js') }}"></script>
+
+<script src="{{ site_url('assets/templates/backend3/assets/vendor/nprogress/nprogress.js') }}"></script>
 @endsection
 
 
 @section('js-inline')
+
+
 <script>
 	$(function () {
 		$('#example1').DataTable()

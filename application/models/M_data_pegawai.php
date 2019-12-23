@@ -7,6 +7,7 @@ class M_data_pegawai extends Eloquent
 	protected $fillable = [
 		'id',
 		'nama',
+		'jenis_kelamin',
 		'jabatan',
 		'nip',
 		'ttl',

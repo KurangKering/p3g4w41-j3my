@@ -23,6 +23,7 @@
 					</h2>
 					<ul class="header-dropdown m-r--5">
 						<li class="dropdown">
+							<button class="btn btn-info btn-md" onclick="location.href='<?php echo e(site_url('private/pegawai/cetak?type=all')); ?>'" type="button">Cetak Data Pegawai</button>
 							<button class="btn btn-info btn-md" onclick="location.href='<?php echo e(site_url('private/pegawai/create')); ?>'" type="button">Tambah Pegawai</button>
 							
 						</li>
@@ -52,6 +53,9 @@
 									<td><?php echo e($pegawai->nip); ?></td>
 									<td><?php echo e($pegawai->pangkat_golongan); ?></td>
 									<td style="width: 1%; white-space: nowrap">
+
+										<a href="#"  onclick="show_detail(<?php echo e($pegawai->id); ?>)" class="btn btn-outline">Detail</a>
+										<a  href="#" onclick="print_pegawai(<?php echo e($pegawai->id); ?>)" class="btn btn-outline">Print</a>
 										<a class="btn btn-success" onclick="location.href='<?php echo e(site_url('private/pegawai/edit/'.$pegawai->id)); ?>'">Edit</a>
 										<button type="button" class="btn btn-warning" onclick="delete_pegawai(<?php echo e($pegawai->id); ?>)">Delete</button>
 									</td>
@@ -80,7 +84,7 @@
 
 
 
-<?php echo $__env->make('private.user.modal_user', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('private.pegawai.modal_pegawai', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('js-import'); ?>
 <!-- Jquery DataTable Plugin Js -->
